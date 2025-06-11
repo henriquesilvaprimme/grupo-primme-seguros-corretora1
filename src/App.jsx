@@ -25,6 +25,7 @@ const App = () => {
   const [senhaInput, setSenhaInput] = useState('');
   const [usuarioLogado, setUsuarioLogado] = useState(null);
   const [leadsFechados, setLeadsFechados] = useState([]);
+  const [backgroundLoaded, setBackgroundLoaded] = useState(false);
 
   useEffect(() => {
     const img = new Image();
