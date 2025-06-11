@@ -26,6 +26,11 @@ const App = () => {
   const [usuarioLogado, setUsuarioLogado] = useState(null);
   const [leadsFechados, setLeadsFechados] = useState([]);
 
+  useEffect(() => {
+  const img = new Image();
+  img.src = '/background.jpg';
+}, []);
+
   // INÍCIO - sincronização leads via Google Sheets
   const [leads, setLeads] = useState([]);
   const [leadSelecionado, setLeadSelecionado] = useState(null); // movido para cá para usar no useEffect
