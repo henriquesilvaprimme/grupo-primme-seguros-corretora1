@@ -521,11 +521,6 @@ const App = () => {
     );
   }
 
-  // retorno para usuários autenticados
-  return <div>{/* Conteúdo da aplicação */}</div>;
-}
-
-
   const isAdmin = usuarioLogado?.tipo === 'Admin';
 
   return (
