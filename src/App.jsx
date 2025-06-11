@@ -466,34 +466,53 @@ const App = () => {
   };
 
   if (!isAuthenticated) {
-    return (
-      <div className="flex items-center justify-center h-screen bg-gradient-to-br from-blue-100 to-indigo-200">
-        <div className="bg-white p-10 rounded-2xl shadow-2xl w-full max-w-md">
-          <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">Entrar no Painel</h2>
-          <input
-            type="text"
-            placeholder="Usuário"
-            value={loginInput}
-            onChange={(e) => setLoginInput(e.target.value)}
-            className="w-full mb-4 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
-          />
-          <input
-            type="password"
-            placeholder="Senha"
-            value={senhaInput}
-            onChange={(e) => setSenhaInput(e.target.value)}
-            className="w-full mb-6 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
-          />
-          <button
-            onClick={handleLogin}
-            className="w-full bg-indigo-500 text-white py-2 rounded-lg hover:bg-indigo-600 transition"
-          >
-            Entrar
-          </button>
+  return (
+    <div
+      className="flex items-center justify-center min-h-screen bg-cover bg-center"
+      style={{
+        backgroundImage: `url('/background.png')`,
+      }}
+    >
+      <div className="bg-blue-900 bg-opacity-60 text-white p-10 rounded-2xl shadow-2xl w-full max-w-sm">
+        <div className="flex flex-col items-center mb-6">
+          <div className="w-12 h-12 mb-2 flex items-center justify-center text-4xl text-yellow-400">
+            👑
+          </div>
+          <h1 className="text-xl font-semibold">GRUPO</h1>
+          <h2 className="text-2xl font-bold text-white">PRIMME SEGUROS</h2>
+          <p className="text-sm text-white">CORRETORA DE SEGUROS</p>
         </div>
+
+        <input
+          type="text"
+          placeholder="Usuário"
+          value={loginInput}
+          onChange={(e) => setLoginInput(e.target.value)}
+          className="w-full mb-4 px-4 py-2 rounded text-black"
+        />
+        <input
+          type="password"
+          placeholder="Senha"
+          value={senhaInput}
+          onChange={(e) => setSenhaInput(e.target.value)}
+          className="w-full mb-2 px-4 py-2 rounded text-black"
+        />
+        <div className="text-right text-sm mb-4">
+          <a href="#" className="text-white underline">
+            Esqueci minha senha
+          </a>
+        </div>
+        <button
+          onClick={handleLogin}
+          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        >
+          ENTRAR
+        </button>
       </div>
-    );
-  }
+    </div>
+  );
+}
+
 
   const isAdmin = usuarioLogado?.tipo === 'Admin';
 
